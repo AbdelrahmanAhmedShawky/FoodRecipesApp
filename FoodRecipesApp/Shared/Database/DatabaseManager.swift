@@ -1,25 +1,23 @@
 import Foundation
 import CoreData
 
-protocol DataManagerProtocol {
+protocol DatabaseManagerProtocol {
     func fetchFavoritesListList() -> [RecipeItemModel]
     func addFavoritesItem(id: String?, fats: String?, name:String?, time: String?, image: String?, carbos: String?, fibers: String?, rating: Double?, country: String?, calories: String?, headline: String?, proteins: String?, favorites: Int32?, difficulty: Int32?, descriptions:String?, highlighted: Bool?, ingredients: [String]?, incompatibilities: String?, deliverable_ingredients: [String]?)
     func deleteFavoritesItem(id: String?, fats: String?, name:String?, time: String?, image: String?, carbos: String?, fibers: String?, rating: Double?, country: String?, calories: String?, headline: String?, proteins: String?, favorites: Int32?, difficulty: Int32?, descriptions:String?, highlighted: Bool?, ingredients: [String]?, incompatibilities: String?, deliverable_ingredients: [String]?)
 }
 
-extension DataManagerProtocol {
+extension DatabaseManagerProtocol {
     func fetchFavoritesListList() -> [RecipeItemModel] {
         fetchFavoritesListList()
     }
 }
 
-class DataManager {
-    static let shared: DataManagerProtocol = DataManager()
+class DatabaseManager {
+    static let shared: DatabaseManagerProtocol = DatabaseManager()
     
     var dbHelper: CoreDataHelper = CoreDataHelper.shared
-    
-    private init() { }
-    
+        
     private func getItem(for todo: RecipeItemModel) -> TodoMO? {
         let predicate =  NSPredicate(format: "id == %@", todo.id ?? "")
         let result = dbHelper.fetchFirst(TodoMO.self, predicate: predicate)
@@ -33,7 +31,7 @@ class DataManager {
 }
 
 // MARK: - DataManagerProtocol
-extension DataManager: DataManagerProtocol {
+extension DatabaseManager: DatabaseManagerProtocol {
         
     func deleteFavoritesItem(id: String?, fats: String?, name:String?, time: String?, image: String?, carbos: String?, fibers: String?, rating: Double?, country: String?, calories: String?, headline: String?, proteins: String?, favorites: Int32?, difficulty: Int32?, descriptions:String?, highlighted: Bool?, ingredients: [String]?, incompatibilities: String?, deliverable_ingredients: [String]?) {
         guard let todoMO = getItem(for: RecipeItemModel(id: id, fats: fats, name: name, time: time, image: image, carbos: carbos, fibers: fibers, rating: rating, country: country, calories: calories, headline: headline, proteins: proteins, favorites: favorites, difficulty: difficulty, descriptions: descriptions, highlighted: highlighted, ingredients: ingredients, incompatibilities: incompatibilities, deliverable_ingredients: deliverable_ingredients)) else {
@@ -77,6 +75,5 @@ extension DataManager: DataManagerProtocol {
             fatalError(error.localizedDescription)
         }
     }
-    
     
 }
