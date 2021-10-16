@@ -19,7 +19,12 @@ struct MockService : Networkable {
     func request<T>(endPoint: RecipeService) -> Observable<T> {
         
         return .create { observer in
-            observer.onNext(mockData as! T)
+            
+            guard let mockData = mockData as? T else {
+                return Disposables.create()
+            }
+            
+            observer.onNext(mockData)
             observer.onCompleted()
             return Disposables.create()
         }
