@@ -11,6 +11,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        
+        let context = CoreDataHelper.shared.persistentContainer.viewContext
+        
         Container.loggingFunction = nil
         AppDelegate.container.registerDependencies()
         
@@ -19,4 +22,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         return true
     }
+    
+    func applicationDidEnterBackground(_ application: UIApplication) {
+        CoreDataHelper.shared.saveContext()
+    }
+    
 }
