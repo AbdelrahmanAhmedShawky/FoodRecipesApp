@@ -3,6 +3,17 @@ import SwinjectAutoregistration
 
 extension Container {
     func registerNetworkManger() {
-        autoregister(NetworkManager.self, initializer: NetworkManager.init).inObjectScope(.container)
+//        autoregister(NetworkManager.self, initializer: NetworkManager.init).inObjectScope(.container)
+        autoregister(Networkable.self, initializer: NetworkManager.init as () -> NetworkManager).inObjectScope(.container)
+    }
+}
+
+@propertyWrapper
+class Inject<T> {
+    
+    let wrappedValue: T
+    
+    init() {
+        self.wrappedValue = AppDelegate.container.resolve(T.self)!
     }
 }

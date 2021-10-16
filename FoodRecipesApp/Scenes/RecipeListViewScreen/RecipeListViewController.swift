@@ -14,9 +14,8 @@ class RecipeListViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        self.title = "Nutrition Analysis API Demo"
+        self.title = "Recipes App"
         setUpBindings()
-        
         
     }
     
@@ -44,13 +43,11 @@ class RecipeListViewController: BaseViewController {
             }).disposed(by: disposeBag)
        
         viewModel.error.subscribe(onNext: { error in
-            self.hideLoading()
-            self.setErrorViewVisible(true)
+            if !(error?.isEmpty ?? false) {
+                self.hideLoading()
+                self.setErrorViewVisible(true)
+            }
         }).disposed(by: disposeBag)
     }
     
-    private func setupTableView() {
-        
-   
-    }
 }

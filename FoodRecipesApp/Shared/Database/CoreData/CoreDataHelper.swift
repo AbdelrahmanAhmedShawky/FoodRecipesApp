@@ -9,8 +9,6 @@ class CoreDataHelper: DBHelperProtocol {
     
     var context: NSManagedObjectContext { persistentContainer.viewContext }
     
-    // MARK: -  DBHelper Protocol
-    
     func create(_ object: NSManagedObject) {
         do {
             try context.save()

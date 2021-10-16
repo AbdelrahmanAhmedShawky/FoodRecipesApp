@@ -5,13 +5,12 @@ import RxCocoa
 class RecipeListViewModel {
     
     private let disposeBag = DisposeBag()
-    let networkManager : NetworkManager
+    let networkManager : Networkable
     var result = BehaviorRelay<[RecipeItemModel]>(value: ([]))
-    let error = PublishRelay<String?>()
+    let error = BehaviorRelay<String?>(value:"")
     var itemSelected = PublishSubject<RecipeItemModel>()
 
-    
-    init(networkManager : NetworkManager) {
+    init(networkManager : Networkable = NetworkManager()) {
         self.networkManager = networkManager
         self.fetchData()
     }

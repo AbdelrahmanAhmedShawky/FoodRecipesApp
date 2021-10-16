@@ -20,7 +20,7 @@ struct RecipeItemModel : Codable {
 	let highlighted : Bool?
 	let ingredients : [String]?
 	let incompatibilities : String?
-	let deliverable_ingredients : [String]?
+	let deliverableIngredients : [String]?
 
 	enum CodingKeys: String, CodingKey {
 
@@ -42,7 +42,7 @@ struct RecipeItemModel : Codable {
         case highlighted = "highlighted"
         case ingredients = "ingredients"
         case incompatibilities = "incompatibilities"
-		case deliverable_ingredients = "deliverable_ingredients"
+		case deliverableIngredients = "deliverable_ingredients"
 	}
     
 }

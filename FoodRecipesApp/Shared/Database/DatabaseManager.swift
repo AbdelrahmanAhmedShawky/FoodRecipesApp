@@ -3,8 +3,8 @@ import CoreData
 
 protocol DatabaseManagerProtocol {
     func fetchFavoritesListList() -> [RecipeItemModel]
-    func addFavoritesItem(id: String?, fats: String?, name:String?, time: String?, image: String?, carbos: String?, fibers: String?, rating: Double?, country: String?, calories: String?, headline: String?, proteins: String?, favorites: Int32?, difficulty: Int32?, descriptions:String?, highlighted: Bool?, ingredients: [String]?, incompatibilities: String?, deliverable_ingredients: [String]?)
-    func deleteFavoritesItem(id: String?, fats: String?, name:String?, time: String?, image: String?, carbos: String?, fibers: String?, rating: Double?, country: String?, calories: String?, headline: String?, proteins: String?, favorites: Int32?, difficulty: Int32?, descriptions:String?, highlighted: Bool?, ingredients: [String]?, incompatibilities: String?, deliverable_ingredients: [String]?)
+    func addFavoritesItem(item: RecipeItemModel?)
+    func deleteFavoritesItem(item: RecipeItemModel?)
 }
 
 extension DatabaseManagerProtocol {
@@ -33,35 +33,39 @@ class DatabaseManager {
 // MARK: - DataManagerProtocol
 extension DatabaseManager: DatabaseManagerProtocol {
         
-    func deleteFavoritesItem(id: String?, fats: String?, name:String?, time: String?, image: String?, carbos: String?, fibers: String?, rating: Double?, country: String?, calories: String?, headline: String?, proteins: String?, favorites: Int32?, difficulty: Int32?, descriptions:String?, highlighted: Bool?, ingredients: [String]?, incompatibilities: String?, deliverable_ingredients: [String]?) {
-        guard let todoMO = getItem(for: RecipeItemModel(id: id, fats: fats, name: name, time: time, image: image, carbos: carbos, fibers: fibers, rating: rating, country: country, calories: calories, headline: headline, proteins: proteins, favorites: favorites, difficulty: difficulty, descriptions: descriptions, highlighted: highlighted, ingredients: ingredients, incompatibilities: incompatibilities, deliverable_ingredients: deliverable_ingredients)) else {
+    func deleteFavoritesItem(item: RecipeItemModel?) {
+        guard let item = item ,let todoMO = getItem(for: item) else {
             return
         }
         dbHelper.delete(todoMO)
     }
     
-    func addFavoritesItem(id: String?, fats: String?, name:String?, time: String?, image: String?, carbos: String?, fibers: String?, rating: Double?, country: String?, calories: String?, headline: String?, proteins: String?, favorites: Int32?, difficulty: Int32?, descriptions:String?, highlighted: Bool?, ingredients: [String]?, incompatibilities: String?, deliverable_ingredients: [String]?) {
+    func addFavoritesItem(item: RecipeItemModel?) {
         let entity = TodoMO.entity()
         let newTodo = TodoMO(entity: entity, insertInto: dbHelper.context)
-        newTodo.id = id
-        newTodo.fats = fats
-        newTodo.name = name
-        newTodo.time = time
-        newTodo.image = image
-        newTodo.carbos = carbos
-        newTodo.fibers = fibers
-        newTodo.rating = rating ?? 0.0
-        newTodo.country = country
-        newTodo.calories = calories
-        newTodo.headline = headline
-        newTodo.proteins = proteins
-        newTodo.favorites = favorites ?? 0
-        newTodo.difficulty = difficulty ?? 0
-        newTodo.descriptions = descriptions
-        newTodo.highlighted = highlighted ?? false
-        newTodo.ingredients = ingredients
-        newTodo.incompatibilities = incompatibilities
-        newTodo.deliverable_ingredients = deliverable_ingredients
+        guard let item = item else {
+            return
+        }
+        
+        newTodo.id = item.id
+        newTodo.fats = item.fats
+        newTodo.name = item.name
+        newTodo.time = item.time
+        newTodo.image = item.image
+        newTodo.carbos = item.carbos
+        newTodo.fibers = item.fibers
+        newTodo.rating = item.rating ?? 0.0
+        newTodo.country = item.country
+        newTodo.calories = item.calories
+        newTodo.headline = item.headline
+        newTodo.proteins = item.proteins
+        newTodo.favorites = item.favorites ?? 0
+        newTodo.difficulty = item.difficulty ?? 0
+        newTodo.descriptions = item.descriptions
+        newTodo.highlighted = item.highlighted ?? false
+        newTodo.ingredients = item.ingredients
+        newTodo.incompatibilities = item.incompatibilities
+        newTodo.deliverableIngredients = item.deliverableIngredients
         
         dbHelper.create(newTodo)
     }

@@ -1,4 +1,3 @@
-
 extension TodoMO {
     func convertToTodo() -> RecipeItemModel {
         RecipeItemModel(
@@ -20,7 +19,7 @@ extension TodoMO {
             highlighted:highlighted,
             ingredients:ingredients,
             incompatibilities:incompatibilities,
-            deliverable_ingredients:deliverable_ingredients
+            deliverableIngredients:deliverableIngredients
         )
     }
 }
