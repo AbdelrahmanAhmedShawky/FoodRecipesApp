@@ -34,6 +34,17 @@ class RecipeListViewCoordinator: BaseCoordinator {
         self.navigationController.navigationBar.barStyle = UIBarStyle.black
         self.navigationController.navigationBar.tintColor = UIColor.white
         
+        viewModel.itemSelected
+            .subscribe(onNext: { results in
+                let storyboard = UIStoryboard(name: "Main", bundle: nil)
+                let viewController = storyboard.instantiateViewController(withIdentifier: "DetailsViewController") as? DetailsViewController
+                
+                guard let viewController = viewController  else {
+                    return
+                }
+                viewController.viewModel = DetailsViewModel(recipeItem: results)
+                self.navigationController.pushViewController(viewController, animated: true)
+            }).disposed(by: disposeBag)
         
         navigationController.viewControllers = [viewController]
         appDelegate?.window?.rootViewController = navigationController

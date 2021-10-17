@@ -5,6 +5,7 @@ protocol DatabaseManagerProtocol {
     func fetchFavoritesListList() -> [RecipeItemModel]
     func addFavoritesItem(item: RecipeItemModel?)
     func deleteFavoritesItem(item: RecipeItemModel?)
+    func getItemFavorites(item: RecipeItemModel?) -> Bool?
 }
 
 extension DatabaseManagerProtocol {
@@ -40,10 +41,18 @@ extension DatabaseManager: DatabaseManagerProtocol {
         dbHelper.delete(todoMO)
     }
     
+    func getItemFavorites(item: RecipeItemModel?) -> Bool? {
+        
+        guard let item = item ,let todoMO = getItem(for: item) else {
+            return false
+        }
+        return true
+    }
+    
     func addFavoritesItem(item: RecipeItemModel?) {
         let entity = TodoMO.entity()
         let newTodo = TodoMO(entity: entity, insertInto: dbHelper.context)
-        guard let item = item else {
+        guard let item = item,!(getItemFavorites(item: item) ?? false) else {
             return
         }
         
