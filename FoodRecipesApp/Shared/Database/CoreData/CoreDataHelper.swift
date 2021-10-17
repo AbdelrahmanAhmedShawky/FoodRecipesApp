@@ -9,6 +9,8 @@ class CoreDataHelper: DBHelperProtocol {
     
     var context: NSManagedObjectContext { persistentContainer.viewContext }
     
+    public static let modelName = "FavoriteList"
+    
     func create(_ object: NSManagedObject) {
         do {
             try context.save()
@@ -58,7 +60,7 @@ class CoreDataHelper: DBHelperProtocol {
     
     // MARK: - Core Data
     lazy var persistentContainer: NSPersistentCloudKitContainer = {
-        let container = NSPersistentCloudKitContainer(name: "FavoriteList")
+        let container = NSPersistentCloudKitContainer(name: CoreDataHelper.modelName)
         container.loadPersistentStores(completionHandler: { (storeDescription, error) in
             if let error = error as NSError? {
                 fatalError("Unresolved error \(error), \(error.userInfo)")
