@@ -48,7 +48,7 @@ class DetailsViewController:UIViewController {
         addToFavoritesButton.rx.tap.subscribe(onNext: { [weak self] _ in
             if self?.addToFavoritesButton.titleLabel?.text == "delete from favorites" {
                 self?.viewModel?.deleteFavoritesItem(item: item)
-            }else {
+            } else {
                 self?.viewModel?.addFavoritesItem(item: item)
             }
            

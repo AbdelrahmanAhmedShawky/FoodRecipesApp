@@ -52,7 +52,7 @@ extension DatabaseManager: DatabaseManagerProtocol {
     func addFavoritesItem(item: RecipeItemModel?) {
         let entity = TodoMO.entity()
         let newTodo = TodoMO(entity: entity, insertInto: dbHelper.context)
-        guard let item = item else {
+        guard let item = item,!(getItemFavorites(item: item) ?? false) else {
             return
         }
         

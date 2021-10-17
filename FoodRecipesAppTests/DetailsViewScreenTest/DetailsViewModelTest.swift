@@ -11,7 +11,6 @@ class DetailsViewModelTest: XCTestCase {
         viewModel.addFavoritesItem(item: expectedList)
         
         XCTAssertTrue(viewModel.getItemFavorites(item: expectedList))
-        
     }
     
     func testdeleteFavoritesItem() {
