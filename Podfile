@@ -18,6 +18,7 @@ target 'FoodRecipesApp' do
   pod 'Kingfisher'
   pod 'SwiftLint'
   pod 'SpreadsheetView'
+  pod 'RxTest'
   target 'FoodRecipesAppTests' do
     inherit! :search_paths
     # Pods for testing

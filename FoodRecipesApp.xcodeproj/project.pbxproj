@@ -12,6 +12,8 @@
 		2D2BF735271D5A660047C909 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D2BF732271D5A660047C909 /* LoginViewController.swift */; };
 		2D2BF736271D5A660047C909 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D2BF733271D5A660047C909 /* LoginViewModel.swift */; };
 		2DAC38A0271D6B570054BDE4 /* LoginViewCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DAC389F271D6B570054BDE4 /* LoginViewCoordinator.swift */; };
+		2DAC38A3271DA4840054BDE4 /* LoginViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DAC38A2271DA4840054BDE4 /* LoginViewModelTests.swift */; };
+		2DAC38A4271DA4B10054BDE4 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D2BF733271D5A660047C909 /* LoginViewModel.swift */; };
 		65889B2E9D47549E50AFCE76 /* Pods_FoodRecipesAppTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 51A651202CBDC270799D0964 /* Pods_FoodRecipesAppTests.framework */; };
 		BC4CB56F2719CCE80048A76A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC4CB56E2719CCE80048A76A /* AppDelegate.swift */; };
 		BC4CB5762719CCE80048A76A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BC4CB5742719CCE80048A76A /* Main.storyboard */; };
@@ -95,6 +97,7 @@
 		2D2BF732271D5A660047C909 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		2D2BF733271D5A660047C909 /* LoginViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 		2DAC389F271D6B570054BDE4 /* LoginViewCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewCoordinator.swift; sourceTree = "<group>"; };
+		2DAC38A2271DA4840054BDE4 /* LoginViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModelTests.swift; sourceTree = "<group>"; };
 		43658B853FD25CF1512235A6 /* Pods-FoodRecipesApp-FoodRecipesAppUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FoodRecipesApp-FoodRecipesAppUITests.release.xcconfig"; path = "Target Support Files/Pods-FoodRecipesApp-FoodRecipesAppUITests/Pods-FoodRecipesApp-FoodRecipesAppUITests.release.xcconfig"; sourceTree = "<group>"; };
 		51A651202CBDC270799D0964 /* Pods_FoodRecipesAppTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FoodRecipesAppTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		584407082EAD1B26DD3723BD /* Pods-FoodRecipesAppTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FoodRecipesAppTests.release.xcconfig"; path = "Target Support Files/Pods-FoodRecipesAppTests/Pods-FoodRecipesAppTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -204,6 +207,14 @@
 			path = LoginScreen;
 			sourceTree = "<group>";
 		};
+		2DAC38A1271DA45A0054BDE4 /* LoginScreenTest */ = {
+			isa = PBXGroup;
+			children = (
+				2DAC38A2271DA4840054BDE4 /* LoginViewModelTests.swift */,
+			);
+			path = LoginScreenTest;
+			sourceTree = "<group>";
+		};
 		BC4CB5622719CCE80048A76A = {
 			isa = PBXGroup;
 			children = (
@@ -245,6 +256,7 @@
 		BC4CB5842719CCED0048A76A /* FoodRecipesAppTests */ = {
 			isa = PBXGroup;
 			children = (
+				2DAC38A1271DA45A0054BDE4 /* LoginScreenTest */,
 				BC7A6C47271C9CE100EBC001 /* DetailsViewScreenTest */,
 				BC4CB606271AD64C0048A76A /* Model */,
 				BC4CB603271AD3940048A76A /* RecipeListViewScreenTest */,
@@ -793,10 +805,12 @@
 				BC7A6C49271C9D2000EBC001 /* DetailsViewModelTest.swift in Sources */,
 				BC7A6C43271B925F00EBC001 /* CoreDataHelper.swift in Sources */,
 				BC4CB611271B04D40048A76A /* Constants.swift in Sources */,
+				2DAC38A3271DA4840054BDE4 /* LoginViewModelTests.swift in Sources */,
 				BC4CB60F271AF54D0048A76A /* RecipeListViewModel.swift in Sources */,
 				BC4CB608271AD6700048A76A /* RecipeTest.swift in Sources */,
 				BC4CB605271AD3DF0048A76A /* MockRecipe.swift in Sources */,
 				BC7A6C40271B924E00EBC001 /* DBHelperProtocol.swift in Sources */,
+				2DAC38A4271DA4B10054BDE4 /* LoginViewModel.swift in Sources */,
 				BC7A6C4B271CA15D00EBC001 /* FavoriteList.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
