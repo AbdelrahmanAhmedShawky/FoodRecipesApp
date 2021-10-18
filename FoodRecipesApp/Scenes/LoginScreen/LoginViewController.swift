@@ -25,7 +25,7 @@ class LoginViewController: BaseViewController {
         
         let outputs = viewModel.configure(
             input: LoginViewModel.Input(
-                username: usernameTextField.rx.text.orEmpty.asObservable(),
+                email: usernameTextField.rx.text.orEmpty.asObservable(),
                 password: passwordTextField.rx.text.orEmpty.asObservable()))
 
         outputs.isLoginAllowed.drive(confirmButton.rx.isEnabled).disposed(by: disposeBag)

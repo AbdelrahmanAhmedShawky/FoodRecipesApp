@@ -14,7 +14,7 @@
 		2DAC38A0271D6B570054BDE4 /* LoginViewCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DAC389F271D6B570054BDE4 /* LoginViewCoordinator.swift */; };
 		2DAC38A3271DA4840054BDE4 /* LoginViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DAC38A2271DA4840054BDE4 /* LoginViewModelTests.swift */; };
 		2DAC38A4271DA4B10054BDE4 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D2BF733271D5A660047C909 /* LoginViewModel.swift */; };
-		65889B2E9D47549E50AFCE76 /* Pods_FoodRecipesAppTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 51A651202CBDC270799D0964 /* Pods_FoodRecipesAppTests.framework */; };
+		65889B2E9D47549E50AFCE76 /* Pods_FoodRecipesAppTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 51A651202CBDC270799D0964 /* Pods_FoodRecipesAppTests.framework */; settings = {ATTRIBUTES = (Required, ); }; };
 		BC4CB56F2719CCE80048A76A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC4CB56E2719CCE80048A76A /* AppDelegate.swift */; };
 		BC4CB5762719CCE80048A76A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BC4CB5742719CCE80048A76A /* Main.storyboard */; };
 		BC4CB5782719CCEC0048A76A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BC4CB5772719CCEC0048A76A /* Assets.xcassets */; };
@@ -68,6 +68,8 @@
 		BC7A6C49271C9D2000EBC001 /* DetailsViewModelTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC7A6C48271C9D2000EBC001 /* DetailsViewModelTest.swift */; };
 		BC7A6C4A271C9DED00EBC001 /* DetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCB8B674271B344000F454D9 /* DetailsViewModel.swift */; };
 		BC7A6C4B271CA15D00EBC001 /* FavoriteList.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = BC4CB5EB271A04FD0048A76A /* FavoriteList.xcdatamodeld */; };
+		BCAEE3A1271DE44C008A3C14 /* UnidirectionalViewModelType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D2BF731271D5A660047C909 /* UnidirectionalViewModelType.swift */; };
+		BCAEE3A3271DFA44008A3C14 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BCAEE3A2271DFA44008A3C14 /* XCTest.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		BCB8B673271B342700F454D9 /* DetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCB8B672271B342700F454D9 /* DetailsViewController.swift */; };
 		BCB8B675271B344000F454D9 /* DetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCB8B674271B344000F454D9 /* DetailsViewModel.swift */; };
 		D0C1D6623CA40378CBE7DCA2 /* Pods_FoodRecipesApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 98AE98D66B1A17F82C6EDBA6 /* Pods_FoodRecipesApp.framework */; };
@@ -150,6 +152,7 @@
 		BC4CB60D271AF53D0048A76A /* RecipeListViewModelTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeListViewModelTest.swift; sourceTree = "<group>"; };
 		BC7A6C45271C999D00EBC001 /* MockDatabaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockDatabaseManager.swift; sourceTree = "<group>"; };
 		BC7A6C48271C9D2000EBC001 /* DetailsViewModelTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsViewModelTest.swift; sourceTree = "<group>"; };
+		BCAEE3A2271DFA44008A3C14 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Platforms/iPhoneOS.platform/Developer/Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		BCB8B672271B342700F454D9 /* DetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsViewController.swift; sourceTree = "<group>"; };
 		BCB8B674271B344000F454D9 /* DetailsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsViewModel.swift; sourceTree = "<group>"; };
 		C9A388054B321A7C869299DC /* Pods-FoodRecipesApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FoodRecipesApp.debug.xcconfig"; path = "Target Support Files/Pods-FoodRecipesApp/Pods-FoodRecipesApp.debug.xcconfig"; sourceTree = "<group>"; };
@@ -160,6 +163,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BCAEE3A3271DFA44008A3C14 /* XCTest.framework in Frameworks */,
 				D0C1D6623CA40378CBE7DCA2 /* Pods_FoodRecipesApp.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -484,6 +488,7 @@
 		E661F826375B7C389604B4B9 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				BCAEE3A2271DFA44008A3C14 /* XCTest.framework */,
 				98AE98D66B1A17F82C6EDBA6 /* Pods_FoodRecipesApp.framework */,
 				8AC9741C78A82A1DA9461E03 /* Pods_FoodRecipesApp_FoodRecipesAppUITests.framework */,
 				51A651202CBDC270799D0964 /* Pods_FoodRecipesAppTests.framework */,
@@ -522,6 +527,7 @@
 				BC4CB57D2719CCED0048A76A /* Sources */,
 				BC4CB57E2719CCED0048A76A /* Frameworks */,
 				BC4CB57F2719CCED0048A76A /* Resources */,
+				0F83A1DBB248DB9B2342785F /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -643,6 +649,23 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-FoodRecipesApp-FoodRecipesAppUITests/Pods-FoodRecipesApp-FoodRecipesAppUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		0F83A1DBB248DB9B2342785F /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-FoodRecipesAppTests/Pods-FoodRecipesAppTests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-FoodRecipesAppTests/Pods-FoodRecipesAppTests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-FoodRecipesAppTests/Pods-FoodRecipesAppTests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		1C1B157397B333EDE6CB993D /* [CP] Check Pods Manifest.lock */ = {
@@ -793,6 +816,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BCAEE3A1271DE44C008A3C14 /* UnidirectionalViewModelType.swift in Sources */,
 				BC7A6C46271C999D00EBC001 /* MockDatabaseManager.swift in Sources */,
 				BC4CB60C271AF4B00048A76A /* NetworkManager.swift in Sources */,
 				BC4CB60E271AF53D0048A76A /* RecipeListViewModelTest.swift in Sources */,
@@ -1015,6 +1039,45 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-framework",
+					"\"Accelerate\"",
+					"-framework",
+					"\"Alamofire\"",
+					"-framework",
+					"\"CFNetwork\"",
+					"-framework",
+					"\"Foundation\"",
+					"-framework",
+					"\"Kingfisher\"",
+					"-framework",
+					"\"Moya\"",
+					"-framework",
+					"\"RxCocoa\"",
+					"-framework",
+					"\"RxOptional\"",
+					"-framework",
+					"\"RxRelay\"",
+					"-framework",
+					"\"RxSwift\"",
+					"-framework",
+					"\"SpreadsheetView\"",
+					"-framework",
+					"\"Swinject\"",
+					"-framework",
+					"\"SwinjectAutoregistration\"",
+					"-framework",
+					"\"Then\"",
+					"-framework",
+					"\"UIKit\"",
+					"-weak_framework",
+					"\"Combine\"",
+					"-weak_framework",
+					"\"SwiftUI\"",
+					"-framework",
+					XCTest,
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.FoodRecipesApp.example;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_COMPILATION_MODE = wholemodule;
@@ -1048,6 +1111,45 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-framework",
+					"\"Accelerate\"",
+					"-framework",
+					"\"Alamofire\"",
+					"-framework",
+					"\"CFNetwork\"",
+					"-framework",
+					"\"Foundation\"",
+					"-framework",
+					"\"Kingfisher\"",
+					"-framework",
+					"\"Moya\"",
+					"-framework",
+					"\"RxCocoa\"",
+					"-framework",
+					"\"RxOptional\"",
+					"-framework",
+					"\"RxRelay\"",
+					"-framework",
+					"\"RxSwift\"",
+					"-framework",
+					"\"SpreadsheetView\"",
+					"-framework",
+					"\"Swinject\"",
+					"-framework",
+					"\"SwinjectAutoregistration\"",
+					"-framework",
+					"\"Then\"",
+					"-framework",
+					"\"UIKit\"",
+					"-weak_framework",
+					"\"Combine\"",
+					"-weak_framework",
+					"\"SwiftUI\"",
+					"-framework",
+					XCTest,
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.FoodRecipesApp.example;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;

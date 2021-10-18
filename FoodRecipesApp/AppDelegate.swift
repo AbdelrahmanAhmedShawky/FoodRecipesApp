@@ -1,5 +1,6 @@
 import UIKit
 import Swinject
+import IQKeyboardManagerSwift
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -16,7 +17,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         Container.loggingFunction = nil
         AppDelegate.container.registerDependencies()
-        
+        IQKeyboardManager.shared.enable = true
         appCoordinator = AppDelegate.container.resolve(AppCoordinator.self)!
         _ = appCoordinator.start()
         

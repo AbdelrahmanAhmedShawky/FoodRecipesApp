@@ -30,14 +30,14 @@ class LoginViewCoordinator: BaseCoordinator {
             navigationController.navigationBar.titleTextAttributes = textAttributes
         }
 
-        self.navigationController.navigationBar.backgroundColor = UIColor(red: 100/255, green: 215/255, blue: 65/255, alpha: 1)
+        self.navigationController.navigationBar.backgroundColor = UIColor(red: 38/255, green: 54/255, blue: 135/255, alpha: 1)
         self.navigationController.navigationItem.backBarButtonItem?.tintColor = UIColor.white
         self.navigationController.navigationBar.isTranslucent = true
         if var textAttributes = navigationController.navigationBar.titleTextAttributes {
             textAttributes[NSAttributedString.Key.foregroundColor] = UIColor.white
             navigationController.navigationBar.titleTextAttributes = textAttributes
         }
-        self.navigationController.navigationBar.barTintColor = UIColor(red: 100/255, green: 215/255, blue: 65/255, alpha: 1)
+        self.navigationController.navigationBar.barTintColor = UIColor(red: 38/255, green: 54/255, blue: 135/255, alpha: 1)
         self.navigationController.navigationBar.barStyle = UIBarStyle.black
         self.navigationController.navigationBar.tintColor = UIColor.white
         
