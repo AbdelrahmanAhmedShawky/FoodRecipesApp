@@ -4,10 +4,14 @@
 iOS application in Swift presenting usage of MVVM-C pattern.
 
 ## Application Features
-- First Screen user enter all ingredient want to analyze in a free text
-- Food analysis Screen user see summary breakdown for entered ingredient in a list
-- Total nutrition facts Screen to see total nutrition facts in daily basis for entered ingredients
-- User can use Application in portrait and landscape  
+First screen: List of recipes
+- The list of recipes loaded from the recipes api.
+
+Second screen: Details page of a recipe
+- A recipe can be favorited or unfavorited.
+
+Third screen: Log in
+- A user should be able to enter a valid email and password to proceed.
 
 ## Implementation features
 - Reactive Programming using `RXSwift`
