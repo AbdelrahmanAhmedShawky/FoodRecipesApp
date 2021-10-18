@@ -5,7 +5,7 @@ protocol DatabaseManagerProtocol {
     func fetchFavoritesListList() -> [RecipeItemModel]
     func addFavoritesItem(item: RecipeItemModel?)
     func deleteFavoritesItem(item: RecipeItemModel?)
-    func getItemFavorites(item: RecipeItemModel?) -> Bool?
+    func isFavoriteItem(item: RecipeItemModel?) -> Bool?
 }
 
 extension DatabaseManagerProtocol {
@@ -17,11 +17,11 @@ extension DatabaseManagerProtocol {
 class DatabaseManager {
     static let shared: DatabaseManagerProtocol = DatabaseManager()
     
-    var dbHelper: CoreDataHelper = CoreDataHelper.shared
+    var databaseHelper: CoreDataHelper = CoreDataHelper.shared
         
     private func getItem(for todo: RecipeItemModel) -> TodoMO? {
         let predicate =  NSPredicate(format: "id == %@", todo.id ?? "")
-        let result = dbHelper.fetchFirst(TodoMO.self, predicate: predicate)
+        let result = databaseHelper.fetchFirst(TodoMO.self, predicate: predicate)
         switch result {
         case .success(let todoMO):
             return todoMO
@@ -38,10 +38,10 @@ extension DatabaseManager: DatabaseManagerProtocol {
         guard let item = item ,let todoMO = getItem(for: item) else {
             return
         }
-        dbHelper.delete(todoMO)
+        databaseHelper.delete(todoMO)
     }
     
-    func getItemFavorites(item: RecipeItemModel?) -> Bool? {
+    func isFavoriteItem(item: RecipeItemModel?) -> Bool? {
         
         guard let item = item ,let todoMO = getItem(for: item) else {
             return false
@@ -51,8 +51,8 @@ extension DatabaseManager: DatabaseManagerProtocol {
     
     func addFavoritesItem(item: RecipeItemModel?) {
         let entity = TodoMO.entity()
-        let newTodo = TodoMO(entity: entity, insertInto: dbHelper.context)
-        guard let item = item,!(getItemFavorites(item: item) ?? false) else {
+        let newTodo = TodoMO(entity: entity, insertInto: databaseHelper.context)
+        guard let item = item,!(isFavoriteItem(item: item) ?? false) else {
             return
         }
         
@@ -76,11 +76,11 @@ extension DatabaseManager: DatabaseManagerProtocol {
         newTodo.incompatibilities = item.incompatibilities
         newTodo.deliverableIngredients = item.deliverableIngredients
         
-        dbHelper.create(newTodo)
+        databaseHelper.create(newTodo)
     }
     
     func fetchFavoritesListList() -> [RecipeItemModel] {
-        let result: Result<[TodoMO], Error> = dbHelper.fetch(TodoMO.self)
+        let result: Result<[TodoMO], Error> = databaseHelper.fetch(TodoMO.self)
         switch result {
         case .success(let todoMOs):
             return todoMOs.map { $0.convertToTodo() }

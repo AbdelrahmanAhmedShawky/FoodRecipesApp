@@ -1,6 +1,6 @@
 import Foundation
 
-public protocol DBHelperProtocol {
+public protocol DatabaseHelperProtocol {
     associatedtype ObjectType
     associatedtype PredicateType
     
@@ -11,7 +11,7 @@ public protocol DBHelperProtocol {
     func delete(_ object: ObjectType)
 }
 
-public extension DBHelperProtocol {
+public extension DatabaseHelperProtocol {
     func fetch(_ objectType: ObjectType.Type, predicate: PredicateType? = nil, limit: Int? = nil) -> Result<[ObjectType], Error> {
         return fetch(objectType, predicate: predicate, limit: limit)
     }
