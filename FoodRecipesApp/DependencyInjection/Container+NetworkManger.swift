@@ -7,13 +7,3 @@ extension Container {
         autoregister(Networkable.self, initializer: NetworkManager.init as () -> NetworkManager).inObjectScope(.container)
     }
 }
-
-@propertyWrapper
-class Inject<T> {
-    
-    let wrappedValue: T
-    
-    init() {
-        self.wrappedValue = AppDelegate.container.resolve(T.self)!
-    }
-}

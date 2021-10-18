@@ -46,8 +46,8 @@ class RecipeListViewCoordinator: BaseCoordinator {
                 self.navigationController.pushViewController(viewController, animated: true)
             }).disposed(by: disposeBag)
         
-        navigationController.viewControllers = [viewController]
-        appDelegate?.window?.rootViewController = navigationController
+//        navigationController.viewControllers = [viewController]
+//        appDelegate?.window?.rootViewController = navigationController
         return viewController
         
     }

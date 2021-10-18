@@ -16,7 +16,7 @@ class AppCoordinator: BaseCoordinator {
     
     private func renderInitScreen() -> UIViewController {
         
-        guard let coordinator = AppDelegate.container.resolve(RecipeListViewCoordinator.self) else {
+        guard let coordinator = AppDelegate.container.resolve(LoginViewCoordinator.self) else {
             return UIViewController()
         }
         

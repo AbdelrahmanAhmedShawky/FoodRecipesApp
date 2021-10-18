@@ -8,6 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		097A5F83A41B8D72DB29EEAB /* Pods_FoodRecipesApp_FoodRecipesAppUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8AC9741C78A82A1DA9461E03 /* Pods_FoodRecipesApp_FoodRecipesAppUITests.framework */; };
+		2D2BF734271D5A660047C909 /* UnidirectionalViewModelType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D2BF731271D5A660047C909 /* UnidirectionalViewModelType.swift */; };
+		2D2BF735271D5A660047C909 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D2BF732271D5A660047C909 /* LoginViewController.swift */; };
+		2D2BF736271D5A660047C909 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D2BF733271D5A660047C909 /* LoginViewModel.swift */; };
+		2DAC38A0271D6B570054BDE4 /* LoginViewCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DAC389F271D6B570054BDE4 /* LoginViewCoordinator.swift */; };
 		65889B2E9D47549E50AFCE76 /* Pods_FoodRecipesAppTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 51A651202CBDC270799D0964 /* Pods_FoodRecipesAppTests.framework */; };
 		BC4CB56F2719CCE80048A76A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC4CB56E2719CCE80048A76A /* AppDelegate.swift */; };
 		BC4CB5762719CCE80048A76A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BC4CB5742719CCE80048A76A /* Main.storyboard */; };
@@ -87,6 +91,10 @@
 /* Begin PBXFileReference section */
 		0CF56D38FCE8C0D21C7FC09C /* Pods-FoodRecipesApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FoodRecipesApp.release.xcconfig"; path = "Target Support Files/Pods-FoodRecipesApp/Pods-FoodRecipesApp.release.xcconfig"; sourceTree = "<group>"; };
 		251B766F5DB371ACD2E89CD8 /* Pods-FoodRecipesApp-FoodRecipesAppUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FoodRecipesApp-FoodRecipesAppUITests.debug.xcconfig"; path = "Target Support Files/Pods-FoodRecipesApp-FoodRecipesAppUITests/Pods-FoodRecipesApp-FoodRecipesAppUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		2D2BF731271D5A660047C909 /* UnidirectionalViewModelType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UnidirectionalViewModelType.swift; sourceTree = "<group>"; };
+		2D2BF732271D5A660047C909 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		2D2BF733271D5A660047C909 /* LoginViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
+		2DAC389F271D6B570054BDE4 /* LoginViewCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewCoordinator.swift; sourceTree = "<group>"; };
 		43658B853FD25CF1512235A6 /* Pods-FoodRecipesApp-FoodRecipesAppUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FoodRecipesApp-FoodRecipesAppUITests.release.xcconfig"; path = "Target Support Files/Pods-FoodRecipesApp-FoodRecipesAppUITests/Pods-FoodRecipesApp-FoodRecipesAppUITests.release.xcconfig"; sourceTree = "<group>"; };
 		51A651202CBDC270799D0964 /* Pods_FoodRecipesAppTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FoodRecipesAppTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		584407082EAD1B26DD3723BD /* Pods-FoodRecipesAppTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FoodRecipesAppTests.release.xcconfig"; path = "Target Support Files/Pods-FoodRecipesAppTests/Pods-FoodRecipesAppTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -183,6 +191,17 @@
 				584407082EAD1B26DD3723BD /* Pods-FoodRecipesAppTests.release.xcconfig */,
 			);
 			path = Pods;
+			sourceTree = "<group>";
+		};
+		2D2BF730271D59010047C909 /* LoginScreen */ = {
+			isa = PBXGroup;
+			children = (
+				2D2BF732271D5A660047C909 /* LoginViewController.swift */,
+				2D2BF733271D5A660047C909 /* LoginViewModel.swift */,
+				2D2BF731271D5A660047C909 /* UnidirectionalViewModelType.swift */,
+				2DAC389F271D6B570054BDE4 /* LoginViewCoordinator.swift */,
+			);
+			path = LoginScreen;
 			sourceTree = "<group>";
 		};
 		BC4CB5622719CCE80048A76A = {
@@ -390,6 +409,7 @@
 		BC4CB5F6271A357A0048A76A /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
+				2D2BF730271D59010047C909 /* LoginScreen */,
 				BCB8B671271B331A00F454D9 /* DetailsViewScreen */,
 				BC4CB5F7271A358F0048A76A /* RecipeListViewScreen */,
 			);
@@ -722,6 +742,7 @@
 			files = (
 				BC4CB5CB2719F9150048A76A /* NetworkManager.swift in Sources */,
 				BC4CB5F3271A0CEB0048A76A /* DBHelperProtocol.swift in Sources */,
+				2D2BF736271D5A660047C909 /* LoginViewModel.swift in Sources */,
 				BC4CB5F1271A04FD0048A76A /* CoreDataHelper.swift in Sources */,
 				BC4CB602271A469D0048A76A /* FoodRecipeCell.swift in Sources */,
 				BC4CB5FD271A36070048A76A /* RecipeListViewController.swift in Sources */,
@@ -729,8 +750,10 @@
 				BCB8B673271B342700F454D9 /* DetailsViewController.swift in Sources */,
 				BC4CB5F5271A34240048A76A /* Container+DatabaseManger.swift in Sources */,
 				BC4CB5C82719F9150048A76A /* Container+NetworkManger.swift in Sources */,
+				2D2BF734271D5A660047C909 /* UnidirectionalViewModelType.swift in Sources */,
 				BC4CB5FE271A36070048A76A /* RecipeListViewModel.swift in Sources */,
 				BC4CB5C92719F9150048A76A /* Container+Coordinators.swift in Sources */,
+				2D2BF735271D5A660047C909 /* LoginViewController.swift in Sources */,
 				BC4CB56F2719CCE80048A76A /* AppDelegate.swift in Sources */,
 				BC4CB5FF271A36070048A76A /* RecipeListViewCoordinator.swift in Sources */,
 				BC4CB5C62719F9150048A76A /* Container+ViewModel.swift in Sources */,
@@ -744,6 +767,7 @@
 				BC4CB5D42719F9150048A76A /* ErrorView.swift in Sources */,
 				BC4CB5DD2719F9150048A76A /* AppCoordinator.swift in Sources */,
 				BC4CB5F0271A04FD0048A76A /* TodoMO.swift in Sources */,
+				2DAC38A0271D6B570054BDE4 /* LoginViewCoordinator.swift in Sources */,
 				BC4CB5CD2719F9150048A76A /* ApiResult.swift in Sources */,
 				BC4CB5D52719F9150048A76A /* BaseViewController.swift in Sources */,
 				BC4CB5D72719F9150048A76A /* BaseView.swift in Sources */,
