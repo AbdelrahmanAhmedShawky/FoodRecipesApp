@@ -20,20 +20,10 @@ class RecipeListViewCoordinator: BaseCoordinator {
         guard let viewController = recipeListViewController  else {
             return UIViewController()
         }
+        viewController.navigationItem.hidesBackButton = true
         
         let appDelegate = UIApplication.shared.delegate as? AppDelegate
         viewController.viewModel = viewModel
-        self.navigationController.navigationBar.backgroundColor = UIColor(red: 100/255, green: 215/255, blue: 65/255, alpha: 1)
-        self.navigationController.navigationItem.backBarButtonItem?.tintColor = UIColor.white
-        self.navigationController.navigationBar.isTranslucent = true
-        if var textAttributes = navigationController.navigationBar.titleTextAttributes {
-            textAttributes[NSAttributedString.Key.foregroundColor] = UIColor.white
-            navigationController.navigationBar.titleTextAttributes = textAttributes
-        }
-        self.navigationController.navigationBar.barTintColor = UIColor(red: 100/255, green: 215/255, blue: 65/255, alpha: 1)
-        self.navigationController.navigationBar.barStyle = UIBarStyle.black
-        self.navigationController.navigationBar.tintColor = UIColor.white
-        
         viewModel.itemSelected
             .subscribe(onNext: { results in
                 let storyboard = UIStoryboard(name: "Main", bundle: nil)
@@ -46,8 +36,6 @@ class RecipeListViewCoordinator: BaseCoordinator {
                 self.navigationController.pushViewController(viewController, animated: true)
             }).disposed(by: disposeBag)
         
-//        navigationController.viewControllers = [viewController]
-//        appDelegate?.window?.rootViewController = navigationController
         return viewController
         
     }

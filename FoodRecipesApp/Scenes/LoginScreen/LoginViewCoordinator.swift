@@ -30,6 +30,17 @@ class LoginViewCoordinator: BaseCoordinator {
             navigationController.navigationBar.titleTextAttributes = textAttributes
         }
 
+        self.navigationController.navigationBar.backgroundColor = UIColor(red: 100/255, green: 215/255, blue: 65/255, alpha: 1)
+        self.navigationController.navigationItem.backBarButtonItem?.tintColor = UIColor.white
+        self.navigationController.navigationBar.isTranslucent = true
+        if var textAttributes = navigationController.navigationBar.titleTextAttributes {
+            textAttributes[NSAttributedString.Key.foregroundColor] = UIColor.white
+            navigationController.navigationBar.titleTextAttributes = textAttributes
+        }
+        self.navigationController.navigationBar.barTintColor = UIColor(red: 100/255, green: 215/255, blue: 65/255, alpha: 1)
+        self.navigationController.navigationBar.barStyle = UIBarStyle.black
+        self.navigationController.navigationBar.tintColor = UIColor.white
+        
         viewModel.confirmButtonAction
             .subscribe(onNext: { _ in
                 self.recipeListViewCoordinator = RecipeListViewCoordinator(viewModel: RecipeListViewModel(networkManager: NetworkManager()))
@@ -40,23 +51,14 @@ class LoginViewCoordinator: BaseCoordinator {
                 
                 let recipeListViewVC = self.start(coordinator:  coordinator)
                 self.removeChildCoordinators()
-                let rootViewController = UINavigationController(rootViewController: recipeListViewVC)
-                rootViewController.navigationBar.backgroundColor = UIColor(red: 100/255, green: 215/255, blue: 65/255, alpha: 1)
-                rootViewController.navigationItem.backBarButtonItem?.tintColor = UIColor.white
-                rootViewController.navigationBar.isTranslucent = true
-                if var textAttributes = rootViewController.navigationBar.titleTextAttributes {
-                    textAttributes[NSAttributedString.Key.foregroundColor] = UIColor.white
-                    rootViewController.navigationBar.titleTextAttributes = textAttributes
-                }
-                rootViewController.navigationBar.barTintColor = UIColor(red: 100/255, green: 215/255, blue: 65/255, alpha: 1)
-                rootViewController.navigationBar.barStyle = UIBarStyle.black
-                rootViewController.navigationBar.tintColor = UIColor.white
-                rootViewController.modalPresentationStyle = .fullScreen
-//                recipeListViewVC.navigationController = self.navigationController
-                appDelegate?.window?.rootViewController?.present(rootViewController, animated: true, completion: nil)
+//                rootViewController.modalPresentationStyle = .fullScreen
+                self.recipeListViewCoordinator?.navigationController = self.navigationController
+                self.navigationController.pushViewController(recipeListViewVC, animated: true)
+//                appDelegate?.window?.rootViewController?.present(rootViewController, animated: true, completion: nil)
             }).disposed(by: disposeBag)
         
-        appDelegate?.window?.rootViewController = viewController
+        navigationController.viewControllers = [viewController]
+        appDelegate?.window?.rootViewController = navigationController
         return viewController
         
     }

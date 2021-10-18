@@ -14,6 +14,7 @@ class LoginViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        title = "Login Screen"
         setUpBindings()
     }
     
