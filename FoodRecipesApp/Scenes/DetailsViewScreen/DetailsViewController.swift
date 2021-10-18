@@ -20,11 +20,11 @@ class DetailsViewController:UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        setupUI(item: viewModel?.recipeItem)
+        setUpBindings(item: viewModel?.recipeItem)
         
     }
     
-    private func setupUI(item:RecipeItemModel?) {
+    private func setUpBindings(item:RecipeItemModel?) {
         
         self.title = "Details"
         

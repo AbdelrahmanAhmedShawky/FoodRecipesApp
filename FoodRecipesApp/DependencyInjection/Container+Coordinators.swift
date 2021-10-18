@@ -5,6 +5,7 @@ extension Container {
     func registerCoordinators() {
         autoregister(AppCoordinator.self, initializer: AppCoordinator.init)
         autoregister(RecipeListViewCoordinator.self, initializer: RecipeListViewCoordinator.init)
+        autoregister(LoginViewCoordinator.self, initializer: LoginViewCoordinator.init)
     }
     
 }
