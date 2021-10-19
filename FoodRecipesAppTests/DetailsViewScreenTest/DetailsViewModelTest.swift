@@ -5,33 +5,37 @@ class DetailsViewModelTest: XCTestCase {
     
     func testAddFavoritesItemThenItemIsFavoriteTrue() {
         let service = MockDataManager()
-        let expectedList = service.todos[0]
-        let viewModel = DetailsViewModel(recipeItem: expectedList, dataManager: service)
         
-        viewModel.addFavoritesItem(item: expectedList)
+        let expectedItem = service.todosArray[0]
+        let viewModel = DetailsViewModel(recipeItem: expectedItem, dataManager: service)
         
-        XCTAssertTrue(viewModel.isFavoriteItem(item: expectedList))
+        XCTAssertFalse(viewModel.isFavoriteItem(item: expectedItem))
+        
+        viewModel.addFavoritesItem(item: expectedItem)
+        
+        XCTAssertTrue(viewModel.isFavoriteItem(item: expectedItem))
     }
     
     func testdeleteFavoritesItemThenItemIsFavoriteFalse() {
         let service = MockDataManager()
-        let expectedList = service.todos[0]
-        let viewModel = DetailsViewModel(recipeItem: expectedList, dataManager: service)
+        let expectedItem = service.todosArray[0]
+        let viewModel = DetailsViewModel(recipeItem: expectedItem, dataManager: service)
+       
+        viewModel.deleteFavoritesItem(item: expectedItem)
         
-        viewModel.deleteFavoritesItem(item: expectedList)
-        
-        XCTAssertFalse(viewModel.isFavoriteItem(item: expectedList))
+        XCTAssertFalse(viewModel.isFavoriteItem(item: expectedItem))
         
     }
     
     func testGetFavoritesItemThenGetFavoriteListTrue() {
-        let expectedList = RecipeItemModel.with()
+       
         let service = MockDataManager()
-        let viewModel = DetailsViewModel(recipeItem: expectedList, dataManager: service)
+        let expectedItem = service.todosArray[0]
+        let viewModel = DetailsViewModel(recipeItem: expectedItem, dataManager: service)
         
-        viewModel.addFavoritesItem(item: expectedList)
+        viewModel.addFavoritesItem(item: expectedItem)
         
-        let getFavorites = viewModel.isFavoriteItem(item: expectedList)
+        let getFavorites = viewModel.isFavoriteItem(item: expectedItem)
         
         XCTAssertNotNil(getFavorites)
         XCTAssertTrue(getFavorites)
@@ -39,11 +43,13 @@ class DetailsViewModelTest: XCTestCase {
     
     func testAddFavoritesItemThenFavoriteListCountIsEqualTrue() {
         let service = MockDataManager()
-        let expectedList = service.todos[0]
-        let viewModel = DetailsViewModel(recipeItem: expectedList, dataManager: service)
+        let expectedItem = service.todosArray[0]
+        let viewModel = DetailsViewModel(recipeItem: expectedItem, dataManager: service)
         
-        viewModel.addFavoritesItem(item: service.todos[0])
-        viewModel.addFavoritesItem(item: service.todos[1])
+        XCTAssertEqual(viewModel.fetchFavoritesListList().count, 0)
+        
+        viewModel.addFavoritesItem(item: service.todosArray[0])
+        viewModel.addFavoritesItem(item: service.todosArray[1])
         
         XCTAssertEqual(viewModel.fetchFavoritesListList().count, 2)
        

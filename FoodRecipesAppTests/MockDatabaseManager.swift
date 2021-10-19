@@ -2,31 +2,28 @@ import Foundation
 
 class MockDataManager {
     var todos = [RecipeItemModel]()
-    
+    var todosArray = [           RecipeItemModel(id: "12356", fats: "fat", name: "name",
+                                                 time: "time", image: "image",
+                                                 carbos: "carbos", fibers: "fibers",
+                                                 rating: 2, country: "country",
+                                                 calories: "calories", headline: "headline",
+                                                 proteins: "proteins", favorites: 3,
+                                                 difficulty: 4, descriptions: "descriptions",
+                                                 highlighted: false, ingredients: ["ingredients"],
+                                                 incompatibilities: "incompatibilities",
+                                                 deliverableIngredients: ["deliverableIngredients"]),
+                                 RecipeItemModel(id: "2223332443", fats: "fat", name: "name",
+                                                 time: "time", image: "image",
+                                                 carbos: "carbos", fibers: "fibers",
+                                                 rating: 2, country: "country",
+                                                 calories: "calories", headline: "headline",
+                                                 proteins: "proteins", favorites: 3, difficulty: 4,
+                                                 descriptions: "descriptions",
+                                                 highlighted: false, ingredients: ["ingredients"],
+                                                 incompatibilities: "incompatibilities",
+                                                 deliverableIngredients: ["deliverableIngredients"])]
     init() {
-        todos = [
-            RecipeItemModel(id: "1", fats: "fat", name: "name",
-                            time: "time", image: "image",
-                            carbos: "carbos", fibers: "fibers",
-                            rating: 2, country: "country",
-                            calories: "calories", headline: "headline",
-                            proteins: "proteins", favorites: 3,
-                            difficulty: 4, descriptions: "descriptions",
-                            highlighted: false, ingredients: ["ingredients"],
-                            incompatibilities: "incompatibilities",
-                            deliverableIngredients: ["deliverableIngredients"]),
-            RecipeItemModel(id: "2", fats: "fat", name: "name",
-                            time: "time", image: "image",
-                            carbos: "carbos", fibers: "fibers",
-                            rating: 2, country: "country",
-                            calories: "calories", headline: "headline",
-                            proteins: "proteins", favorites: 3, difficulty: 4,
-                            descriptions: "descriptions",
-                            highlighted: false, ingredients: ["ingredients"],
-                            incompatibilities: "incompatibilities",
-                            deliverableIngredients: ["deliverableIngredients"])
-
-        ]
+        todos = [RecipeItemModel]()
     }
 }
 
@@ -38,7 +35,7 @@ extension MockDataManager: DatabaseManagerProtocol {
             return
         }
         
-        todos.insert(todo, at: 0)
+        todos.append(todo)
   
     }
     

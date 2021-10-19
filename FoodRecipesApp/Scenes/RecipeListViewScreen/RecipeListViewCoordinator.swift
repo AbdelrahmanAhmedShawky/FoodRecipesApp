@@ -22,7 +22,6 @@ class RecipeListViewCoordinator: BaseCoordinator {
         }
         viewController.navigationItem.hidesBackButton = true
         
-        let appDelegate = UIApplication.shared.delegate as? AppDelegate
         viewController.viewModel = viewModel
         viewModel.itemSelected
             .subscribe(onNext: { results in
