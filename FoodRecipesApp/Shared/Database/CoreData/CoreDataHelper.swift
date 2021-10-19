@@ -1,7 +1,7 @@
 import Foundation
 import CoreData
 
-class CoreDataHelper: DBHelperProtocol {
+class CoreDataHelper: DatabaseHelperProtocol {
     static let shared = CoreDataHelper()
     
     typealias ObjectType = NSManagedObject

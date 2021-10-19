@@ -3,7 +3,7 @@ import XCTest
 
 class RecipeListViewModelTest: XCTestCase {
 
-    func testSuccessFetchData() {
+    func testSuccessFetchDataThenShowList() {
         let expectedList = [RecipeItemModel.with()]
         let service = MockService(mockData: expectedList)
         let viewModel = RecipeListViewModel(networkManager: service)
@@ -14,7 +14,7 @@ class RecipeListViewModelTest: XCTestCase {
         XCTAssertEqual(viewModel.result.value.count, 1)
     }
     
-    func testEmptyData() {
+    func testEmptyDataThenShowEmptyList() {
         let expectedList = [RecipeItemModel]()
         let service = MockService(mockData: expectedList)
 
@@ -26,15 +26,13 @@ class RecipeListViewModelTest: XCTestCase {
         XCTAssertEqual(viewModel.result.value.count, 0)
     }
 
-    func testNilData() {
+    func testNilDataThenFailedShowError() {
         let expectedList: [RecipeItemModel]? = nil
         let service = MockService(mockData: expectedList)
 
         let viewModel = RecipeListViewModel(networkManager: service)
 
-        viewModel.fetchData()
-
-        XCTAssertTrue((viewModel.error.value?.isEmpty ?? false))
+        XCTAssertFalse((viewModel.error.value?.isEmpty ?? false))
         XCTAssertEqual(viewModel.result.value.count, 0)
     }
 
