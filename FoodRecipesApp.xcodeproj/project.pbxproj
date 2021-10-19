@@ -45,7 +45,7 @@
 		BC4CB5EF271A04FD0048A76A /* FavoriteList.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = BC4CB5EB271A04FD0048A76A /* FavoriteList.xcdatamodeld */; };
 		BC4CB5F0271A04FD0048A76A /* TodoMO.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC4CB5ED271A04FD0048A76A /* TodoMO.swift */; };
 		BC4CB5F1271A04FD0048A76A /* CoreDataHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC4CB5EE271A04FD0048A76A /* CoreDataHelper.swift */; };
-		BC4CB5F3271A0CEB0048A76A /* DBHelperProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC4CB5F2271A0CEB0048A76A /* DBHelperProtocol.swift */; };
+		BC4CB5F3271A0CEB0048A76A /* DatabaseHelperProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC4CB5F2271A0CEB0048A76A /* DatabaseHelperProtocol.swift */; };
 		BC4CB5F5271A34240048A76A /* Container+DatabaseManger.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC4CB5F4271A34240048A76A /* Container+DatabaseManger.swift */; };
 		BC4CB5FD271A36070048A76A /* RecipeListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC4CB5FA271A36060048A76A /* RecipeListViewController.swift */; };
 		BC4CB5FE271A36070048A76A /* RecipeListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC4CB5FB271A36060048A76A /* RecipeListViewModel.swift */; };
@@ -60,7 +60,7 @@
 		BC4CB60F271AF54D0048A76A /* RecipeListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC4CB5FB271A36060048A76A /* RecipeListViewModel.swift */; };
 		BC4CB610271AFA520048A76A /* RecipeService.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC4CB5A62719F9140048A76A /* RecipeService.swift */; };
 		BC4CB611271B04D40048A76A /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC4CB5AE2719F9140048A76A /* Constants.swift */; };
-		BC7A6C40271B924E00EBC001 /* DBHelperProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC4CB5F2271A0CEB0048A76A /* DBHelperProtocol.swift */; };
+		BC7A6C40271B924E00EBC001 /* DatabaseHelperProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC4CB5F2271A0CEB0048A76A /* DatabaseHelperProtocol.swift */; };
 		BC7A6C42271B925B00EBC001 /* TodoMO.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC4CB5ED271A04FD0048A76A /* TodoMO.swift */; };
 		BC7A6C43271B925F00EBC001 /* CoreDataHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC4CB5EE271A04FD0048A76A /* CoreDataHelper.swift */; };
 		BC7A6C44271B926200EBC001 /* DatabaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC4CB5E8271A04A50048A76A /* DatabaseManager.swift */; };
@@ -140,7 +140,7 @@
 		BC4CB5EC271A04FD0048A76A /* FavoriteList.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = FavoriteList.xcdatamodel; sourceTree = "<group>"; };
 		BC4CB5ED271A04FD0048A76A /* TodoMO.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TodoMO.swift; sourceTree = "<group>"; };
 		BC4CB5EE271A04FD0048A76A /* CoreDataHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataHelper.swift; sourceTree = "<group>"; };
-		BC4CB5F2271A0CEB0048A76A /* DBHelperProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DBHelperProtocol.swift; sourceTree = "<group>"; };
+		BC4CB5F2271A0CEB0048A76A /* DatabaseHelperProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DatabaseHelperProtocol.swift; sourceTree = "<group>"; };
 		BC4CB5F4271A34240048A76A /* Container+DatabaseManger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Container+DatabaseManger.swift"; sourceTree = "<group>"; };
 		BC4CB5FA271A36060048A76A /* RecipeListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecipeListViewController.swift; sourceTree = "<group>"; };
 		BC4CB5FB271A36060048A76A /* RecipeListViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecipeListViewModel.swift; sourceTree = "<group>"; };
@@ -405,7 +405,7 @@
 		BC4CB5E7271A04A40048A76A /* Database */ = {
 			isa = PBXGroup;
 			children = (
-				BC4CB5F2271A0CEB0048A76A /* DBHelperProtocol.swift */,
+				BC4CB5F2271A0CEB0048A76A /* DatabaseHelperProtocol.swift */,
 				BC4CB5EA271A04FD0048A76A /* CoreData */,
 				BC4CB5E8271A04A50048A76A /* DatabaseManager.swift */,
 			);
@@ -776,7 +776,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				BC4CB5CB2719F9150048A76A /* NetworkManager.swift in Sources */,
-				BC4CB5F3271A0CEB0048A76A /* DBHelperProtocol.swift in Sources */,
+				BC4CB5F3271A0CEB0048A76A /* DatabaseHelperProtocol.swift in Sources */,
 				2D2BF736271D5A660047C909 /* LoginViewModel.swift in Sources */,
 				BC4CB5F1271A04FD0048A76A /* CoreDataHelper.swift in Sources */,
 				BC4CB602271A469D0048A76A /* FoodRecipeCell.swift in Sources */,
@@ -833,7 +833,7 @@
 				BC4CB60F271AF54D0048A76A /* RecipeListViewModel.swift in Sources */,
 				BC4CB608271AD6700048A76A /* RecipeTest.swift in Sources */,
 				BC4CB605271AD3DF0048A76A /* MockRecipe.swift in Sources */,
-				BC7A6C40271B924E00EBC001 /* DBHelperProtocol.swift in Sources */,
+				BC7A6C40271B924E00EBC001 /* DatabaseHelperProtocol.swift in Sources */,
 				2DAC38A4271DA4B10054BDE4 /* LoginViewModel.swift in Sources */,
 				BC7A6C4B271CA15D00EBC001 /* FavoriteList.xcdatamodeld in Sources */,
 			);

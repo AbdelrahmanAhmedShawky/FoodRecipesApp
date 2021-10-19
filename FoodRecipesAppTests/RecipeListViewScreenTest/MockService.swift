@@ -20,11 +20,14 @@ struct MockService : Networkable {
         
         return .create { observer in
             
-            guard let mockData = mockData as? T else {
+            guard let mockData = mockData else {
+                let error = NSError(domain: "", code: 401, userInfo: [NSLocalizedDescriptionKey : "not exist"])
+                observer.onError(error)
+                observer.onCompleted()
                 return Disposables.create()
             }
             
-            observer.onNext(mockData)
+            observer.onNext(mockData as! T)
             observer.onCompleted()
             return Disposables.create()
         }

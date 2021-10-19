@@ -29,10 +29,10 @@ class LoginViewController: BaseViewController {
                 password: passwordTextField.rx.text.orEmpty.asObservable()))
 
         outputs.isLoginAllowed.drive(confirmButton.rx.isEnabled).disposed(by: disposeBag)
-
-        confirmButton.rx.tap.throttle(.seconds(1), scheduler: MainScheduler.instance).bind {
+       
+        confirmButton.rx.tap.subscribe(onNext: { _ in
             viewModel.confirmButtonAction.onNext(true)
-        }.disposed(by: disposeBag)
+        }).disposed(by: disposeBag)
     }
     
 }

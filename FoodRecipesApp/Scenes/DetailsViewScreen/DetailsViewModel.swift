@@ -5,7 +5,8 @@ import RxCocoa
 protocol FavoritesListViewModelProtocol {
     func addFavoritesItem(item: RecipeItemModel?)
     func deleteFavoritesItem(item: RecipeItemModel?)
-    func getItemFavorites(item: RecipeItemModel?) -> Bool
+    func isFavoriteItem(item: RecipeItemModel?) -> Bool
+    func fetchFavoritesListList() -> [RecipeItemModel]
 }
 
 class DetailsViewModel {
@@ -18,7 +19,7 @@ class DetailsViewModel {
     init(recipeItem: RecipeItemModel?,dataManager: DatabaseManagerProtocol = DatabaseManager.shared) {
         self.recipeItem = recipeItem
         self.dataManager = dataManager
-        isFavorite.accept(self.getItemFavorites(item: recipeItem))
+        isFavorite.accept(self.isFavoriteItem(item: recipeItem))
     }
     
 }
@@ -26,16 +27,20 @@ class DetailsViewModel {
 extension DetailsViewModel: FavoritesListViewModelProtocol {
     func addFavoritesItem(item: RecipeItemModel?) {
         dataManager.addFavoritesItem(item: item)
-        isFavorite.accept(self.getItemFavorites(item: recipeItem))
+        isFavorite.accept(self.isFavoriteItem(item: recipeItem))
     }
     
     func deleteFavoritesItem(item: RecipeItemModel?) {
         dataManager.deleteFavoritesItem(item: item)
-        isFavorite.accept(self.getItemFavorites(item: recipeItem))
+        isFavorite.accept(self.isFavoriteItem(item: recipeItem))
     }
     
-    func getItemFavorites(item: RecipeItemModel?) -> Bool {
-        return dataManager.getItemFavorites(item: item) ?? false
+    func isFavoriteItem(item: RecipeItemModel?) -> Bool {
+        return dataManager.isFavoriteItem(item: item) ?? false
+    }
+    
+    func fetchFavoritesListList() -> [RecipeItemModel] {
+        return dataManager.fetchFavoritesListList()
     }
     
 }
