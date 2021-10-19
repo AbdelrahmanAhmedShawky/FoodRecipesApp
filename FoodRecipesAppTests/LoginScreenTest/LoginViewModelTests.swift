@@ -9,8 +9,6 @@ class LoginViewModelTests: XCTestCase {
     
     var viewModel: LoginViewModel!
 
-    let disposeBag = DisposeBag()
-    
     override func setUpWithError() throws {
         viewModel = LoginViewModel()
     }
