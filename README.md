@@ -5,7 +5,7 @@ iOS application in Swift presenting usage of MVVM-C pattern.
 
 ## Application Features
 First screen: List of recipes
-- The list of recipes loaded from the recipes api.
+- The list of recipes loaded from the [recipes API](https://api.npoint.io/43427003d33f1f6b51cc).
 
 Second screen: Details page of a recipe
 - A recipe can be favorited or unfavorited.
