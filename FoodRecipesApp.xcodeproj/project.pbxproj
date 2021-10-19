@@ -70,6 +70,7 @@
 		BC7A6C4B271CA15D00EBC001 /* FavoriteList.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = BC4CB5EB271A04FD0048A76A /* FavoriteList.xcdatamodeld */; };
 		BCAEE3A1271DE44C008A3C14 /* UnidirectionalViewModelType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D2BF731271D5A660047C909 /* UnidirectionalViewModelType.swift */; };
 		BCAEE3A3271DFA44008A3C14 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BCAEE3A2271DFA44008A3C14 /* XCTest.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
+		BCAEE3A7271F41F1008A3C14 /* Extensions+Strings.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCAEE3A6271F41F1008A3C14 /* Extensions+Strings.swift */; };
 		BCB8B673271B342700F454D9 /* DetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCB8B672271B342700F454D9 /* DetailsViewController.swift */; };
 		BCB8B675271B344000F454D9 /* DetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCB8B674271B344000F454D9 /* DetailsViewModel.swift */; };
 		D0C1D6623CA40378CBE7DCA2 /* Pods_FoodRecipesApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 98AE98D66B1A17F82C6EDBA6 /* Pods_FoodRecipesApp.framework */; };
@@ -153,6 +154,7 @@
 		BC7A6C45271C999D00EBC001 /* MockDatabaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockDatabaseManager.swift; sourceTree = "<group>"; };
 		BC7A6C48271C9D2000EBC001 /* DetailsViewModelTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsViewModelTest.swift; sourceTree = "<group>"; };
 		BCAEE3A2271DFA44008A3C14 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Platforms/iPhoneOS.platform/Developer/Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		BCAEE3A6271F41F1008A3C14 /* Extensions+Strings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extensions+Strings.swift"; sourceTree = "<group>"; };
 		BCB8B672271B342700F454D9 /* DetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsViewController.swift; sourceTree = "<group>"; };
 		BCB8B674271B344000F454D9 /* DetailsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsViewModel.swift; sourceTree = "<group>"; };
 		C9A388054B321A7C869299DC /* Pods-FoodRecipesApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FoodRecipesApp.debug.xcconfig"; path = "Target Support Files/Pods-FoodRecipesApp/Pods-FoodRecipesApp.debug.xcconfig"; sourceTree = "<group>"; };
@@ -294,6 +296,7 @@
 		BC4CB5A42719F9140048A76A /* Shared */ = {
 			isa = PBXGroup;
 			children = (
+				BCAEE3A5271F41AA008A3C14 /* Extensions */,
 				BC4CB5E7271A04A40048A76A /* Database */,
 				BC4CB5A52719F9140048A76A /* Network */,
 				BC4CB5AD2719F9140048A76A /* Utils */,
@@ -474,6 +477,14 @@
 				BC7A6C48271C9D2000EBC001 /* DetailsViewModelTest.swift */,
 			);
 			path = DetailsViewScreenTest;
+			sourceTree = "<group>";
+		};
+		BCAEE3A5271F41AA008A3C14 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				BCAEE3A6271F41F1008A3C14 /* Extensions+Strings.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 		BCB8B671271B331A00F454D9 /* DetailsViewScreen */ = {
@@ -801,6 +812,7 @@
 				BC4CB5CA2719F9150048A76A /* RecipeService.swift in Sources */,
 				BC4CB5D42719F9150048A76A /* ErrorView.swift in Sources */,
 				BC4CB5DD2719F9150048A76A /* AppCoordinator.swift in Sources */,
+				BCAEE3A7271F41F1008A3C14 /* Extensions+Strings.swift in Sources */,
 				BC4CB5F0271A04FD0048A76A /* TodoMO.swift in Sources */,
 				2DAC38A0271D6B570054BDE4 /* LoginViewCoordinator.swift in Sources */,
 				BC4CB5CD2719F9150048A76A /* ApiResult.swift in Sources */,
