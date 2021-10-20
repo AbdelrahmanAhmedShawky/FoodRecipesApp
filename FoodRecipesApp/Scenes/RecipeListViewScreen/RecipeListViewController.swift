@@ -49,7 +49,8 @@ class RecipeListViewController: BaseViewController {
             }
         }).disposed(by: disposeBag)
         
-        viewError.retryAction.subscribe(onNext: { _ in
+        viewError.retryAction.subscribe(onNext: {[weak self] _ in
+            self?.showLoading()
             viewModel.fetchData()
         }).disposed(by: disposeBag)
         
