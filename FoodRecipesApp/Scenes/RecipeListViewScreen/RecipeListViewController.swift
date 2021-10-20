@@ -29,25 +29,30 @@ class RecipeListViewController: BaseViewController {
             return
         }
         self.showLoading()
-        viewModel.result.asObservable().bind(to: self.tableView.rx.items(cellIdentifier: "FoodRecipeCell", cellType: FoodRecipeCell.self)) { row, data, cell in
-            self.hideLoading()
-            self.setErrorViewVisible(false)
+        viewModel.result.asObservable().bind(to: self.tableView.rx.items(cellIdentifier: "FoodRecipeCell", cellType: FoodRecipeCell.self)) {[weak self] row, data, cell in
+            self?.hideLoading()
+            self?.setErrorViewVisible(false)
             cell.updateCell(item: data)
         }.disposed(by: disposeBag)
         
         self.tableView
             .rx
             .modelSelected(RecipeItemModel.self)
-            .subscribe(onNext: { (user) in
-                self.viewModel?.itemSelected.onNext(user)
+            .subscribe(onNext: { [weak self] (user) in
+                self?.viewModel?.itemSelected.onNext(user)
             }).disposed(by: disposeBag)
        
-        viewModel.error.subscribe(onNext: { error in
+        viewModel.error.subscribe(onNext: {[weak self]  error in
             if !(error?.isEmpty ?? false) {
-                self.hideLoading()
-                self.setErrorViewVisible(true)
+                self?.hideLoading()
+                self?.setErrorViewVisible(true)
             }
         }).disposed(by: disposeBag)
+        
+        viewError.retryAction.subscribe(onNext: { _ in
+            viewModel.fetchData()
+        }).disposed(by: disposeBag)
+        
     }
     
 }
