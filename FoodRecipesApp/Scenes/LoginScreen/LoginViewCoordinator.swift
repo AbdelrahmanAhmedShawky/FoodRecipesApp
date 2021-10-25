@@ -51,10 +51,8 @@ class LoginViewCoordinator: BaseCoordinator {
                 
                 let recipeListViewVC = self.start(coordinator:  coordinator)
                 self.removeChildCoordinators()
-//                rootViewController.modalPresentationStyle = .fullScreen
                 self.recipeListViewCoordinator?.navigationController = self.navigationController
                 self.navigationController.pushViewController(recipeListViewVC, animated: true)
-//                appDelegate?.window?.rootViewController?.present(rootViewController, animated: true, completion: nil)
             }).disposed(by: disposeBag)
         
         navigationController.viewControllers = [viewController]

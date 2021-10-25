@@ -11,6 +11,7 @@
 		2D2BF734271D5A660047C909 /* UnidirectionalViewModelType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D2BF731271D5A660047C909 /* UnidirectionalViewModelType.swift */; };
 		2D2BF735271D5A660047C909 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D2BF732271D5A660047C909 /* LoginViewController.swift */; };
 		2D2BF736271D5A660047C909 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D2BF733271D5A660047C909 /* LoginViewModel.swift */; };
+		2DA6696127269B190074B8DA /* Extensions+Strings.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCAEE3A6271F41F1008A3C14 /* Extensions+Strings.swift */; };
 		2DAC38A0271D6B570054BDE4 /* LoginViewCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DAC389F271D6B570054BDE4 /* LoginViewCoordinator.swift */; };
 		2DAC38A3271DA4840054BDE4 /* LoginViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DAC38A2271DA4840054BDE4 /* LoginViewModelTests.swift */; };
 		2DAC38A4271DA4B10054BDE4 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D2BF733271D5A660047C909 /* LoginViewModel.swift */; };
@@ -840,6 +841,7 @@
 				BC4CB610271AFA520048A76A /* RecipeService.swift in Sources */,
 				BC7A6C49271C9D2000EBC001 /* DetailsViewModelTest.swift in Sources */,
 				BC7A6C43271B925F00EBC001 /* CoreDataHelper.swift in Sources */,
+				2DA6696127269B190074B8DA /* Extensions+Strings.swift in Sources */,
 				BC4CB611271B04D40048A76A /* Constants.swift in Sources */,
 				2DAC38A3271DA4840054BDE4 /* LoginViewModelTests.swift in Sources */,
 				BC4CB60F271AF54D0048A76A /* RecipeListViewModel.swift in Sources */,

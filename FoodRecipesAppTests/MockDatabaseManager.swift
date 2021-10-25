@@ -47,7 +47,7 @@ extension MockDataManager: DatabaseManagerProtocol {
     }
     
     func isFavoriteItem(item: RecipeItemModel?) -> Bool? {
-        guard let todo = item ,let index = todos.firstIndex(where: { $0.id == todo.id })else {
+        guard let todo = item ,let index = todos.firstIndex(where: { $0.id == todo.id }) else {
             return false
         }
         return true

@@ -62,10 +62,10 @@ class RecipeTest: XCTestCase {
             }
         """.data(using: .utf8)!
         
-        let recipe = try! JSONDecoder().decode(RecipeItemModel.self, from: json)
+        let recipe = try? JSONDecoder().decode(RecipeItemModel.self, from: json)
         
         XCTAssertNotNil(recipe)
-        XCTAssertEqual(recipe.id, RecipeItemModel.with().id)
+        XCTAssertEqual(recipe?.id, RecipeItemModel.with().id)
     }
 
 }

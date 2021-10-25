@@ -26,14 +26,14 @@ struct NetworkManager: Networkable {
                                 } else {
                                     observer.onError(NSError())
                                 }
-                            observer.onCompleted()
-                        
-                    case .error(let error):
+                        observer.onCompleted()
+                    case .failure(let error):
                         guard let isReachable = NetworkReachabilityManager()?.isReachable,isReachable  else {
                             observer.onError(error)
                             return
                         }
                         observer.onError(error)
+
                     }
             }
         }
